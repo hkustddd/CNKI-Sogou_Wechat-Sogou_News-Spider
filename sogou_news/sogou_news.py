@@ -63,11 +63,11 @@ class SogouNews:
                     if "<p class=\"news-from\">" in t:
                         clean_text += t
 
-                if current_content == clean_text:
+                if current_content == clean_text: # 重复则立刻停止循环
                     print("关键词搜索完成...")
                     break
 
-                current_content = clean_text
+                current_content = clean_text   
                 soup = BeautifulSoup(clean_text, "lxml")
                 urls = []
                 titles = []
